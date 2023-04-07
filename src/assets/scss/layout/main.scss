@@ -84,6 +84,11 @@
 @media screen and (max-width: 550px) {
     .main {
         flex-basis: 100%;
+
+        &::before,
+        &::after {
+            display: none;
+        }
     }
     .main-title {
         max-width: 90%;
@@ -99,11 +104,37 @@
     }
     .divider {
         border: 0;
-        margin: -1px;
+        margin: -2px;
 
         svg {
             border: 0;
         }
+    }
+}
+@media screen and (max-width:768px) {
+    .main {
+        &::before {
+            background-position: -227px 60px;
+        }
+        &::after {
+            background-position: 115.5% 62%;
+        }
+    }
+    .main-title {
+        max-width: 60%;
+        font-size: var(--fs-56);
+        line-height: var(--line-height-60);
+    }
+    .main-btn{
+        margin-top: 4%;
+    }
+    .main-img {
+        width: 514px;
+        height: 296px;
+        transform: translate(5%, 90%);
+    }
+    .divider {
+        margin: -1px;
     }
 }
 /* End Main*/
