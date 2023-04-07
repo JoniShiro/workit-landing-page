@@ -1,2 +1,455 @@
+@font-face {
+  font-family: "fraunces";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/Fraunces-VariableFont_SOFT,WONK,opsz,wght.6b107a99.ttf") format("truetype");
+}
+@font-face {
+  font-family: "manrope";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("/Manrope-VariableFont_wght.e9b4756f.ttf") format("truetype");
+}
+/* Reset CSS */
+/*
+1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Mixin Media Query */
+:root {
+  /* Colors loop */
+  --clr-neutral-900: #24053E;
+  --clr-neutral-800: #584D62;
+  --clr-neutral-500: #44FFA1;
+  --clr-primary-200: #FCF8FF;
+  --clr-primary-100: #fff;
+  /* Font size loop */
+  --fs-80: clamp(3.125rem, 0.5rem + 10vw, 5rem);
+  --fs-56: clamp(2.5rem, 0.5rem + 7vw, 3.5rem);
+  --fs-32: clamp(1.75rem, 0.5rem + 3vw, 2rem);
+  --fs-21: 1.3125rem;
+  --fs-18: 1.125rem;
+  --fs-16: 1rem;
+  /* Line Height loop */
+  --line-height-80: 5rem;
+  --line-height-64: 4rem;
+  --line-height-60: 3.75rem;
+  --line-height-56: 3.5rem;
+  --line-height-50: 3.125rem;
+  --line-height-48: 3rem;
+  --line-height-40: 2.5rem;
+  --line-height-36: 2.25rem;
+  --line-height-32: 2rem;
+  --line-height-28: 1.75rem;
+  --ff-primary: Fraunces 144pt, serif;
+  --ff-text: Manrope, sans-serif;
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+  --max-width: 1112px;
+}
+
+body {
+  font-size: var(--fs-18);
+  counter-reset: section;
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    width: 100%;
+  }
+}
+.btn-header, .about-btn {
+  height: 55px;
+  width: 133px;
+  background-color: var(--clr-neutral-500);
+  font-family: var(--ff-text);
+  font-style: normal;
+  font-weight: var(--fw-700);
+  font-size: 16px;
+  line-height: var(--line-height-32);
+  text-align: center;
+  letter-spacing: -0.16px;
+  color: var(--clr-neutral-900);
+}
+
+.about-btn {
+  width: 175px;
+  margin: 10px 0;
+}
+
+.wave-box {
+  position: relative;
+  background-color: var(--clr-primary-200);
+  width: 100%;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+}
+
+/* Start Header */
+header {
+  background-color: var(--clr-neutral-900);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.nav-img {
+  width: 80px;
+  height: 50px;
+}
+
+.nav-link {
+  font-family: var(--ff-text);
+  color: var(--clr-primary-100);
+  font-style: normal;
+  font-weight: var(--fw-700);
+  font-size: var(--fs-18);
+  line-height: var(--line-height-32);
+  letter-spacing: -0.18px;
+  text-decoration-skip: none;
+  text-decoration: 3px underline var(--clr-neutral-500);
+  text-underline-offset: 10px;
+}
+
+@media screen and (max-width: 550px) {
+  .nav-link {
+    font-size: var(--fs-16);
+  }
+}
+/* End Header */
+/* Start Main*/
+.main {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  flex-basis: 80%;
+  align-items: center;
+  background-color: var(--clr-neutral-900);
+  padding: 90px 0 250px 0;
+  position: relative;
+}
+
+.main-title {
+  max-width: 40%;
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-80);
+  line-height: var(--line-height-80);
+  text-align: center;
+  color: var(--clr-primary-100);
+  position: relative;
+  padding-bottom: 1%;
+}
+.main-title a {
+  color: var(--clr-primary-100);
+  text-decoration-skip: none;
+  text-decoration: 3px underline var(--clr-neutral-500);
+  text-underline-offset: 10px;
+}
+
+.main-btn {
+  width: 161px;
+  height: 61px;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-neutral-500);
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-18);
+  line-height: var(--line-height-32);
+  text-align: center;
+  letter-spacing: -0.18px;
+  color: var(--clr-neutral-900);
+}
+
+.main-img {
+  position: absolute;
+  width: 767px;
+  height: 441px;
+  z-index: 100;
+  transform: translate(0, 60%);
+}
+
+.divider {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  bottom: 0;
+  background-color: var(--clr-primary-200);
+}
+.divider svg {
+  background-color: var(--clr-primary-200);
+}
+
+@media screen and (max-width: 550px) {
+  .main {
+    flex-basis: 100%;
+  }
+  .main-title {
+    max-width: 90%;
+    font-weight: 600;
+    font-size: var(--fs-56);
+    line-height: var(--line-height-50);
+    padding-bottom: 5%;
+  }
+  .main-img {
+    width: 320px;
+    height: 184px;
+    transform: translate(5%, 140%);
+  }
+  .divider {
+    border: 0;
+    margin: -1px;
+  }
+  .divider svg {
+    border: 0;
+  }
+}
+/* End Main*/
+/* Start Features */
+.features {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20% 0 15% 0;
+  background-color: var(--clr-primary-200);
+  position: relative;
+}
+
+.features-section {
+  flex-basis: 30.33%;
+  text-align: center;
+  margin-inline: 3%;
+}
+.features-section::before {
+  counter-increment: section;
+  content: counter(section);
+  border: 1px solid var(--clr-neutral-900);
+  border-radius: 50%;
+  padding: 2%;
+}
+
+.features-section > * {
+  padding: 1%;
+}
+
+.feature-title {
+  padding-top: 25px;
+  font-family: "Fraunces 144pt";
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-32);
+  line-height: var(--line-height-40);
+  text-align: center;
+  color: var(--clr-neutral-900);
+}
+
+.feature-text {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-18);
+  line-height: var(--line-height-32);
+  text-align: center;
+  color: var(--clr-neutral-800);
+}
+
+.feauture-divider {
+  position: absolute;
+  height: 10px;
+  width: 100%;
+  bottom: 0;
+}
+.feauture-divider svg {
+  background-color: var(--clr-primary-100);
+}
+
+@media screen and (max-width: 550px) {
+  .features {
+    flex-direction: column;
+  }
+  .feature-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+/* End Features */
+/* Start Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15% 0 5% 0;
+}
+
+.profile-section {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+  flex-basis: 730px;
+  padding: 3%;
+  z-index: 20;
+  background-color: var(--clr-neutral-900);
+}
+
+.profile-img {
+  max-width: 477px;
+  max-height: 477px;
+  z-index: 1;
+  transform: translate(17%, -10%);
+}
+
+h2 {
+  padding-bottom: 2%;
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-56);
+  line-height: var(--line-height-64);
+  color: var(--clr-primary-100);
+}
+
+.profile-text {
+  padding-bottom: 5%;
+  font-family: var(--ff-text);
+  font-style: normal;
+  font-weight: var(--fw-400);
+  font-size: var(--fs-18);
+  line-height: var(--line-height-32);
+  color: var(--clr-primary-100);
+}
+
+.profile-btn {
+  width: 161px;
+  height: 61px;
+  border: 1px solid transparent;
+  color: var(--clr-neutral-900);
+  background-color: var(--clr-neutral-500);
+  font-family: var(--ff-primary);
+  font-style: normal;
+  font-weight: var(--fw-600);
+  font-size: var(--fs-18);
+  line-height: var(--line-height-32);
+  text-align: center;
+  letter-spacing: -0.18px;
+  color: var(--clr-neutral-900);
+}
+
+/* End Profile */
+/* Start Footer */
+.footer, .footer-list {
+  display: flex;
+}
+
+.footer {
+  height: 300px;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-img {
+  width: 95.76px;
+  height: 24.61px;
+}
+
+.footer-list {
+  width: 30%;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+/* End Footer */
 
 /*# sourceMappingURL=/main.90218242.css.map */

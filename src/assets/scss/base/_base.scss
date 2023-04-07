@@ -1,0 +1,12 @@
+@use "../abstract/" as *;
+
+body {
+    font-size: var(--fs-18);
+    counter-reset: section;
+}
+
+@media screen and (max-width: 550px) {
+    body {
+        width: 100%;
+    }
+}

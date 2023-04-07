@@ -168,7 +168,11 @@ function reloadCSS() {
   }, 50);
 }
 module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"assets/scss/main.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf":[["Fraunces-VariableFont_SOFT,WONK,opsz,wght.6b107a99.ttf","assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf"],"assets/fonts/fraunces/Fraunces-VariableFont_SOFT,WONK,opsz,wght.ttf"],"./../fonts/manrope/Manrope-VariableFont_wght.ttf":[["Manrope-VariableFont_wght.e9b4756f.ttf","assets/fonts/manrope/Manrope-VariableFont_wght.ttf"],"assets/fonts/manrope/Manrope-VariableFont_wght.ttf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -193,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52480" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49483" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

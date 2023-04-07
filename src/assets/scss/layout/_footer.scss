@@ -1,0 +1,22 @@
+@use '../base' as *;
+/* Start Footer */
+.footer, .footer-list {
+    display: flex;
+}
+.footer {
+    height: 300px;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.footer-img {
+    width: 95.76px;
+    height: 24.61px;
+}
+.footer-list {
+    width: 30%;
+    justify-content: space-evenly;
+    list-style: none;
+}
+/* End Footer */

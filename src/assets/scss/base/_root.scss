@@ -1,0 +1,29 @@
+@use '../abstract' as *;
+
+:root {
+    /* Colors loop */
+    @each $color, $shade in $colors {
+        @each $prop, $value in $shade {
+            --clr-#{$color}-#{$prop}: #{$value};
+        }
+    }
+        /* Font size loop */
+    @each $font, $value in $font-size {
+        --fs-#{$font}: #{$value};
+    }
+
+    /* Line Height loop */
+    @each $line,
+    $value in $line-height {
+        --line-height-#{$line}: #{$value};
+    }
+    
+    --ff-primary: #{$ff-fraunces};
+    --ff-text: #{$ff-manrope};
+    --fw-400: #{$fw-400};
+    --fw-600: #{$fw-600};
+    --fw-700: #{$fw-700};
+
+
+    --max-width: 1112px;
+}

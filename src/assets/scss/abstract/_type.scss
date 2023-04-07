@@ -1,0 +1,28 @@
+$ff-fraunces: "Fraunces 144pt", serif;
+$ff-manrope: "Manrope", sans-serif;
+
+$font-size: (
+    80: clamp(3.125rem, 0.5rem + 10vw, 5rem),
+    56: clamp(2.5rem, 0.5rem + 7vw, 3.5rem),
+    32: clamp(1.75rem, 0.5rem + 3vw, 2rem),
+    21: 1.3125rem,
+    18: 1.125rem,
+    16: 1rem,
+);
+
+$line-height: (
+    80: 5rem,
+    64: 4rem,
+    60: 3.75rem,
+    56: 3.5rem,
+    50:3.125rem,
+    48: 3rem,
+    40: 2.5rem,
+    36: 2.25rem,
+    32: 2rem,
+    28: 1.75rem,
+);
+
+$fw-400: 400;
+$fw-600: 600;
+$fw-700: 700;

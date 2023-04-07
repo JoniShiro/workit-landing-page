@@ -1,0 +1,19 @@
+.wave-box {
+    position: relative;
+    background-color: var(--clr-primary-200);
+    width: 100%;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+    }
+}
