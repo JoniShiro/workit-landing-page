@@ -19,4 +19,13 @@
     justify-content: space-evenly;
     list-style: none;
 }
+@media screen and (max-width: 550px) {
+    .footer {
+        gap: 50px;
+    }
+    .footer-list {
+        width: 50%;
+        justify-content: space-between;
+    }
+}
 /* End Footer */

@@ -11,6 +11,23 @@
     background-color: var(--clr-neutral-900);
     padding: 90px 0 250px 0;
     position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../../assets/images/bg-pattern-1.svg");
+        background-repeat: no-repeat;
+        background-position: -120px 60px;
+    }
+    &::after {
+        content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("../../assets/images/bg-pattern-2.svg");
+            background-repeat: no-repeat;
+            background-position: 104.5% 62%;
+    }
 }
 .main-title {
     max-width: 40%;

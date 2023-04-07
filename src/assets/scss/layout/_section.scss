@@ -13,14 +13,14 @@
 .features-section {
     flex-basis: 30.33%;
     text-align: center;
-    margin-inline: 3%;
+    margin: 5% 3%;
 
     &::before {
         counter-increment: section;
         content: counter(section);
         border: 1px solid var(--clr-neutral-900);
         border-radius: 50%;
-        padding: 2%;
+        padding: 4%;
     }
 }
 .features-section > * {
@@ -61,8 +61,12 @@
         flex-direction: column;
     }
     .feature-title {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: var(--fs-32);
+        line-height: var(--line-height-36);
+    }
+    .feature-text {
+        font-size: var(--fs-16);
+        line-height: var(--line-height-28);
     }
 }
 /* End Features */
@@ -72,6 +76,17 @@
     align-items: center;
     justify-content: flex-start;
     padding: 15% 0 5% 0;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../../assets/images/bg-pattern-3.svg");
+        background-position: 85% 103%;
+        background-repeat: no-repeat;
+        z-index: 100;
+    }
 }
 .profile-section {
     display: flex;
@@ -79,8 +94,9 @@
     flex-direction: column;
     flex-basis: 730px;
     padding: 3%;
-    z-index: 20;
     background-color: var(--clr-neutral-900);
+    z-index: 20;
+    
 }
 .profile-img {
     max-width: 477px;
@@ -88,7 +104,7 @@
     z-index: 1;
     transform: translate(17%, -10%);
 }
-h2 {
+.profile-title {
     padding-bottom: 2%;
     font-family: var(--ff-primary);
     font-style: normal;
@@ -120,5 +136,31 @@ h2 {
     text-align: center;
     letter-spacing: -0.18px;
     color: var(--clr-neutral-900);
+}
+
+@media screen and (max-width: 550px) {
+    .profile {
+        flex-direction: column;
+    }
+    .profile-section {
+        margin-inline: 3%;
+        flex-basis: 343px;
+        justify-content: center;
+        align-items: center;
+        padding: 8%;
+    }
+    .profile-img {
+        width: 281px;
+        height: 281px;
+        transform: translate(0, 17%);
+    }
+    .profile-title {
+        font-size: var(--fs-32);
+        line-height: var(--line-height-48);
+    }
+    .profile-text {
+        font-size: var(--fs-16);
+        line-height: var(--line-height-28);
+    }
 }
 /* End Profile */
